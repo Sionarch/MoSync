@@ -360,6 +360,7 @@ namespace Wormhole
 		//Adding this Class as a Sensor Listener
 		MAUtil::Environment::getEnvironment().addSensorListener(this);
 		MAUtil::Environment::getEnvironment().addCustomEventListener(this);
+		MAUtil::Environment::getEnvironment().addFocusListener(this);
 	}
 
 	/**
@@ -371,16 +372,18 @@ namespace Wormhole
 		{
 			mPhoneGapSensors->sendLocationData(event);
 		}
-		else if (event.type == EVENT_TYPE_FOCUS_LOST)
-		{
-			//let the phoneGap app know that it should go to sleep
-			callJS("try{PhoneGapCommandResult('pause')}catch(e){}");
-		}
-		else if (event.type == EVENT_TYPE_FOCUS_GAINED)
-		{
-			//let the PhoneGap side know that it should resume
-			callJS("try{PhoneGapCommandResult('resume')}catch(e){}");
-		}
+	}
+
+	void PhoneGapMessageHandler::focusLost()
+	{
+		//let the phoneGap app know that it should go to sleep
+		callJS("try{PhoneGapCommandResult('pause')}catch(e){}");
+	}
+
+	void PhoneGapMessageHandler::focusGained()
+	{
+		//let the PhoneGap side know that it should resume
+		callJS("try{PhoneGapCommandResult('resume')}catch(e){}");
 	}
 
 	/**
