@@ -26,6 +26,7 @@ MA 02110-1301, USA.
 #include <maapi.h>
 #include <mastdlib.h> // C string conversion functions
 #include <conprint.h>
+#include <mavsprintf.h>
 #include "../../Encoder.h"
 #include "PhoneGapMessageHandler.h"
 
@@ -530,6 +531,8 @@ namespace Wormhole
 		script += ",'" + keepCallbackStr + "'";
 
 		script += ")";
+
+		lprintfln("callJS: %.*s", 2000, script.c_str());
 
 		callJS(script);
 	}
