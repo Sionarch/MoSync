@@ -50,8 +50,6 @@ import android.text.InputType;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
@@ -341,8 +339,10 @@ public class TextBox extends Activity implements OnClickListener {
 
 			// Write text directly to the MoSync memory
 			char[] ca = output.toCharArray();
-			ByteBuffer buffer = mosyncThread.getMemorySlice(mOutputMemPtr, ca.length * 2 + 1);
+			ByteBuffer buffer = mosyncThread.getMemorySlice(mOutputMemPtr, (ca.length + 1) * 2).order(null);
 
+			// NOTE: THIS DIFFERS FROM WHAT IS BEING OUTPUT IN THE mCancelButton check,
+			// where bytes are used instead. Really strange -- is this wchars or smthg? Why?
 			CharBuffer cb = buffer.asCharBuffer();
 			cb.put(ca);
 			cb.put((char)0);
@@ -367,7 +367,7 @@ public class TextBox extends Activity implements OnClickListener {
 
 			// Write text directly to the MoSync memory
 			byte[] ba = output.getBytes();
-			ByteBuffer buffer = mosyncThread.getMemorySlice(mOutputMemPtr, ba.length + 1);
+			ByteBuffer buffer = mosyncThread.getMemorySlice(mOutputMemPtr, ba.length + 1).order(null);
 			buffer.put(ba);
 			buffer.put((byte)0);
 
