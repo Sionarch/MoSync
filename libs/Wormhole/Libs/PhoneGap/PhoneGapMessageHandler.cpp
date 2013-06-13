@@ -487,7 +487,7 @@ namespace Wormhole
 
 		String args =
 			"{\"code\":" + errorCode +
-			",\"message\":\"" + err + "\"}";
+			",\"message\":" + Encoder::JSONStringify(err.c_str()) + "}";
 
 		callCallback(
 			"cordova.callbackFromNative",

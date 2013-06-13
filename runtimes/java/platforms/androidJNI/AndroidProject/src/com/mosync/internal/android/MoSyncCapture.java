@@ -387,7 +387,7 @@ public class MoSyncCapture
 
 			if (!sourceFile.exists())
 			{
-				Log.e("@@MoSync","maCaptureWriteImage File already exists. (" + sourceFile.getPath() + ")");
+				Log.e("@@MoSync","maCaptureWriteImage source file doesn't exist.");
 				return MA_CAPTURE_RES_INVALID_HANDLE;
 			}
 
@@ -395,7 +395,7 @@ public class MoSyncCapture
 			// TODO: Should this really be an error?
 			if (destFile.exists())
 			{
-				Log.e("@@MoSync","maCaptureWriteImage File already exists.");
+				Log.e("@@MoSync","maCaptureWriteImage destination file already exists.");
 				return MA_CAPTURE_RES_FILE_ALREADY_EXISTS;
 			}
 
@@ -548,7 +548,6 @@ public class MoSyncCapture
 	 */
 	public static void handlePicture(Intent intent)
 	{
-		Log.i("@@MoSync","handlePicture called");
 		// There are four alternative ways used to obtain the captured image:
 		//
 		// 1) Access the image using the uri passed to the camera intent.
