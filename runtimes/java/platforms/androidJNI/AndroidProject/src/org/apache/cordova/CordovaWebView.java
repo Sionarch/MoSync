@@ -71,7 +71,7 @@ public class CordovaWebView extends WebView {
 
 
     /** Activities and other important classes **/
-    private CordovaInterface cordova;
+    protected CordovaInterface cordova;
     CordovaWebViewClient viewClient;
     @SuppressWarnings("unused")
     private CordovaChromeClient chromeClient;
@@ -87,8 +87,8 @@ public class CordovaWebView extends WebView {
     
     private long lastMenuEventTime = 0;
 
-    NativeToJsMessageQueue jsMessageQueue;
-    ExposedJsApi exposedJsApi;
+    protected NativeToJsMessageQueue jsMessageQueue;
+    protected ExposedJsApi exposedJsApi;
 
     /** custom view created by the browser (a video player for example) */
     private View mCustomView;
