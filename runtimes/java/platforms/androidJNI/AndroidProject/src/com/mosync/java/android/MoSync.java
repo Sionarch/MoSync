@@ -93,12 +93,17 @@ import com.mosync.nativeui.ui.widgets.TabScreenWidget;
 import com.mosync.nativeui.ui.widgets.Widget;
 import com.mosync.nativeui.util.ScreenTransitions;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import org.apache.cordova.api.CordovaPlugin;
+import org.apache.cordova.api.CordovaInterface;
+
 /**
  * Main MoSync activity
  *
  * As long as this activity is running the application is running.
  */
-public class MoSync extends Activity
+public class MoSync extends Activity implements CordovaInterface
 {
 	/**
 	 * Activity request codes for Camera intent.
@@ -125,6 +130,54 @@ public class MoSync extends Activity
 	 * values retrieved when configuration changes.
 	 */
 	private static int mScreenRotation = Surface.ROTATION_0;
+
+	private final ExecutorService threadPool = Executors.newCachedThreadPool();
+
+	/**
+	 * Launch an activity for which you would like a result when it finished. When this activity exits,
+	 * your onActivityResult() method will be called.
+	 *
+	 * @param command           The command object
+	 * @param intent            The intent to start
+	 * @param requestCode       The request code that is passed to callback to identify the activity
+	 */
+	public void startActivityForResult(CordovaPlugin command, Intent intent, int requestCode) {
+	}
+
+	/**
+	 * Set the plugin to be called when a sub-activity exits.
+	 *
+	 * @param plugin      The plugin on which onActivityResult is to be called
+	 */
+	public void setActivityResultCallback(CordovaPlugin plugin) {
+	}
+
+	/**
+	 * Get the Android activity.
+	 *
+	 * @return
+	 */
+	public Activity getActivity() {
+		return this;
+	}
+
+	/**
+	 * Called when a message is sent to plugin.
+	 *
+	 * @param id            The message id
+	 * @param data          The message data
+	 * @return              Object or null
+	 */
+	public Object onMessage(String id, Object data) {
+		return null;
+	}
+
+	/**
+	 * Returns a shared thread pool that can be used for background tasks.
+	 */
+	public ExecutorService getThreadPool() {
+		return threadPool;
+	}
 
 	/**
 	 * Sets screen and window properties.
