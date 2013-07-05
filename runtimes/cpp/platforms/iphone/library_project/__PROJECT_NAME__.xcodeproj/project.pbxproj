@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0777DB3E178706E600F9F57B /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0777DB3D178706E600F9F57B /* config.xml */; };
+		0777DB3F178706F400F9F57B /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0777DB3D178706E600F9F57B /* config.xml */; };
 		079E27AD17857946004EAB21 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079E27AC17857946004EAB21 /* AssetsLibrary.framework */; };
 		079E27AF1785794D004EAB21 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079E27AE1785794D004EAB21 /* OpenAL.framework */; };
 		079E27B117857951004EAB21 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079E27B017857951004EAB21 /* ImageIO.framework */; };
@@ -82,6 +84,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0777DB3D178706E600F9F57B /* config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
 		079E27AC17857946004EAB21 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		079E27AE1785794D004EAB21 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		079E27B017857951004EAB21 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -255,6 +258,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0777DB3D178706E600F9F57B /* config.xml */,
 				E4A6E14D14D8030300616741 /* Icon@2x.png */,
 				85796C5312719251002B7859 /* Icon-72.png */,
 				4344B356165136A7005E26C6 /* Default-568h@2x.png */,
@@ -373,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0777DB3F178706F400F9F57B /* config.xml in Resources */,
 				0B92CFDB1716AFFF002DFDF6 /* Icon-72.png in Resources */,
 				0B92CFDC1716AFFF002DFDF6 /* Icon.png in Resources */,
 				0B92CFDD1716AFFF002DFDF6 /* Icon@2x.png in Resources */,
@@ -391,6 +396,7 @@
 				85796C5612719251002B7859 /* Icon.png in Resources */,
 				E4A6E14E14D8030300616741 /* Icon@2x.png in Resources */,
 				4344B357165136A8005E26C6 /* Default-568h@2x.png in Resources */,
+				0777DB3E178706E600F9F57B /* config.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
