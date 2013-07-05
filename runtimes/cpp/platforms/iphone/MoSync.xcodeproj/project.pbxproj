@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		075B17181783086F004097E4 /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 075B171717830865004097E4 /* libCordova.a */; };
 		0777DAF217859EE400F9F57B /* CordovaViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0777DAF017859EE400F9F57B /* CordovaViewController.h */; };
 		0777DAF317859EE400F9F57B /* CordovaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0777DAF117859EE400F9F57B /* CordovaViewController.m */; };
 		0777DAF417859EE400F9F57B /* CordovaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0777DAF117859EE400F9F57B /* CordovaViewController.m */; };
 		0777DAF517859EE400F9F57B /* CordovaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0777DAF117859EE400F9F57B /* CordovaViewController.m */; };
 		0777DAF617859EE400F9F57B /* CordovaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0777DAF117859EE400F9F57B /* CordovaViewController.m */; };
+		0777DB391786DFCB00F9F57B /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0777DB381786DFC000F9F57B /* libCordova.a */; };
 		0B10E8D214064DDB00B6DA6B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B10E8D114064DDB00B6DA6B /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0BA8B4261729732D00ABD129 /* program in Resources */ = {isa = PBXBuildFile; fileRef = 85BF2C3A11341EF000BB0201 /* program */; };
 		0BA8B4271729732D00ABD129 /* resources in Resources */ = {isa = PBXBuildFile; fileRef = 85A0815311353EDE00267D56 /* resources */; };
@@ -640,16 +640,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		075B171617830865004097E4 /* PBXContainerItemProxy */ = {
+		0777DB371786DFC000F9F57B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 075B171217830865004097E4 /* CordovaLib.xcodeproj */;
+			containerPortal = 0777DB331786DFC000F9F57B /* CordovaLib.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 68A32D7114102E1C006B237C;
 			remoteInfo = CordovaLib;
 		};
-		075B171917830874004097E4 /* PBXContainerItemProxy */ = {
+		0777DB3A1786DFD000F9F57B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 075B171217830865004097E4 /* CordovaLib.xcodeproj */;
+			containerPortal = 0777DB331786DFC000F9F57B /* CordovaLib.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = CordovaLib;
@@ -664,13 +664,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		075B171217830865004097E4 /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = "../../../../../Cordova/cordova-ios/CordovaLib/CordovaLib.xcodeproj"; sourceTree = "<group>"; };
 		075B171B1783087F004097E4 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		075B171D17830883004097E4 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		075B171F17830888004097E4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		075B17211783088F004097E4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		0777DAF017859EE400F9F57B /* CordovaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CordovaViewController.h; sourceTree = "<group>"; };
 		0777DAF117859EE400F9F57B /* CordovaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CordovaViewController.m; sourceTree = "<group>"; };
+		0777DB331786DFC000F9F57B /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		0B10E8D114064DDB00B6DA6B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0BA8B4D41729732D00ABD129 /* MoSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA8B4D6172973AC00ABD129 /* MoSyncLibs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = MoSyncLibs.a; sourceTree = "<group>"; };
@@ -1087,7 +1087,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075B17181783086F004097E4 /* libCordova.a in Frameworks */,
+				0777DB391786DFCB00F9F57B /* libCordova.a in Frameworks */,
 				43C4836216417AFA008F9A39 /* MapKit.framework in Frameworks */,
 				E438DF501535D35D008B5005 /* CoreMedia.framework in Frameworks */,
 				431869A913F68E660051D97A /* AddressBook.framework in Frameworks */,
@@ -1125,10 +1125,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		075B171317830865004097E4 /* Products */ = {
+		0777DB341786DFC000F9F57B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				075B171717830865004097E4 /* libCordova.a */,
+				0777DB381786DFC000F9F57B /* libCordova.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1189,7 +1189,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				075B171217830865004097E4 /* CordovaLib.xcodeproj */,
+				0777DB331786DFC000F9F57B /* CordovaLib.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -2059,7 +2059,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				075B171A17830874004097E4 /* PBXTargetDependency */,
+				0777DB3B1786DFD000F9F57B /* PBXTargetDependency */,
 			);
 			name = MoSyncLib;
 			productName = MoSyncLib;
@@ -2106,8 +2106,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 075B171317830865004097E4 /* Products */;
-					ProjectRef = 075B171217830865004097E4 /* CordovaLib.xcodeproj */;
+					ProductGroup = 0777DB341786DFC000F9F57B /* Products */;
+					ProjectRef = 0777DB331786DFC000F9F57B /* CordovaLib.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -2121,11 +2121,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		075B171717830865004097E4 /* libCordova.a */ = {
+		0777DB381786DFC000F9F57B /* libCordova.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libCordova.a;
-			remoteRef = 075B171617830865004097E4 /* PBXContainerItemProxy */;
+			remoteRef = 0777DB371786DFC000F9F57B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2630,10 +2630,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		075B171A17830874004097E4 /* PBXTargetDependency */ = {
+		0777DB3B1786DFD000F9F57B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CordovaLib;
-			targetProxy = 075B171917830874004097E4 /* PBXContainerItemProxy */;
+			targetProxy = 0777DB3A1786DFD000F9F57B /* PBXContainerItemProxy */;
 		};
 		85F2558F11AC15BA00EB47EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2790,6 +2790,14 @@
 				GCC_PREFIX_HEADER = MoSync_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../..,
+					../../Base,
+					Classes/impl,
+					../../../../intlibs,
+					../../../../libs,
+					CordovaLib/Classes,
+				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-D__MS_XCODE__",
@@ -2797,7 +2805,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = MoSyncLib;
-				USER_HEADER_SEARCH_PATHS = "/Users/eric/Documents/Cordova/cordova-ios/CordovaLib/**";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -2811,6 +2819,14 @@
 				GCC_PREFIX_HEADER = MoSync_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../..,
+					../../Base,
+					Classes/impl,
+					../../../../intlibs,
+					../../../../libs,
+					CordovaLib/Classes,
+				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-D__MS_XCODE__",
@@ -2818,7 +2834,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = MoSyncLib;
-				USER_HEADER_SEARCH_PATHS = "/Users/eric/Documents/Cordova/cordova-ios/CordovaLib/**";
+				USER_HEADER_SEARCH_PATHS = "";
 				ZERO_LINK = NO;
 			};
 			name = Release;
