@@ -43,11 +43,6 @@ import com.mosync.nativeui.util.properties.PropertyConversionException;
 
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.api.CordovaInterface;
-import org.apache.cordova.api.PluginManager;
-import org.apache.cordova.ExposedJsApi;
-import org.apache.cordova.NativeToJsMessageQueue;
-import org.apache.cordova.IceCreamCordovaWebViewClient;
-import org.apache.cordova.CordovaChromeClient;
 
 /**
  * A WebWidget is graphical element that displays a webpage
@@ -438,13 +433,6 @@ public class WebWidget extends Widget
 			//CookieManager.getInstance().setAcceptCookie(true);
 
 			this.setVerticalScrollbarOverlay(true);
-
-			this.cordova = (CordovaInterface) context;
-
-			pluginManager = new PluginManager(this, this.cordova);
-			jsMessageQueue = new NativeToJsMessageQueue(this, this.cordova);
-			exposedJsApi = new ExposedJsApi(pluginManager, jsMessageQueue);
-			this.addJavascriptInterface(exposedJsApi, "_cordovaNative");
 
 			// Settings for higher Android versions that may fail at
 			// application loading time are made here.

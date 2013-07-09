@@ -28,7 +28,7 @@ import org.json.JSONException;
  * an equivalent entry in CordovaChromeClient.java, and be added to
  * cordova-js/lib/android/plugin/android/promptbasednativeapi.js
  */
-/* package */ public class ExposedJsApi {
+/* package */ class ExposedJsApi {
     
     private PluginManager pluginManager;
     private NativeToJsMessageQueue jsMessageQueue;
