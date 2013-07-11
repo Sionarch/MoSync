@@ -19,7 +19,6 @@
 package org.apache.cordova.api;
 
 import java.io.IOException;
-import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -354,7 +353,7 @@ public class PluginManager {
     public boolean onOverrideUrlLoading(String url) {
         Iterator<Entry<String, String>> it = this.urlMap.entrySet().iterator();
         while (it.hasNext()) {
-            Map.Entry<String, String> pairs = it.next();
+            Entry<String, String> pairs = it.next();
             if (url.startsWith(pairs.getKey())) {
                 return this.getPlugin(pairs.getValue()).onOverrideUrlLoading(url);
             }
@@ -373,7 +372,7 @@ public class PluginManager {
     public WebResourceResponse shouldInterceptRequest(String url) {
         Iterator<Entry<String, String>> it = this.urlMap.entrySet().iterator();
         while (it.hasNext()) {
-            Map.Entry<String, String> pairs = it.next();
+            Entry<String, String> pairs = it.next();
             if (url.startsWith(pairs.getKey())) {
                 return this.getPlugin(pairs.getValue()).shouldInterceptRequest(url);
             }
