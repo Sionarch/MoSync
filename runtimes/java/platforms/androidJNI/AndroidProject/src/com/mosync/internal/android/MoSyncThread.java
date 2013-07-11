@@ -4507,6 +4507,15 @@ public class MoSyncThread extends Thread implements MoSyncContext
 	}
 
 	/**
+	 * Internal wrapper for maWidgetGetProperty that runs
+	 * the call in the UI thread.
+	 */
+	public Widget maWidgetGet(final int widgetHandle)
+	{
+		return mMoSyncNativeUI.getWidget(widgetHandle);
+	}
+
+	/**
 	 * Internal wrapper for maWidgetAddChild that runs
 	 * the call in the UI thread.
 	 */

@@ -65,6 +65,7 @@ import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.View;
 import android.view.Window;
+import android.webkit.WebView;
 
 import com.mosync.internal.android.EventQueue;
 import com.mosync.internal.android.Mediator;
@@ -134,6 +135,17 @@ public class MoSync extends Activity implements CordovaInterface
 
 	private final ExecutorService threadPool = Executors.newCachedThreadPool();
 
+	// Plugin to call when activity result is received
+	protected CordovaPlugin activityResultCallback = null;
+	protected boolean activityResultKeepRunning;
+
+	// Keep app running when pause is received. (default = true)
+	// If true, then the JavaScript and native code continue to run in the background
+	// when another application (activity) is started.
+	protected boolean keepRunning = true;
+
+	private String initCallbackClass;
+
 	/**
 	 * Launch an activity for which you would like a result when it finished. When this activity exits,
 	 * your onActivityResult() method will be called.
@@ -143,6 +155,16 @@ public class MoSync extends Activity implements CordovaInterface
 	 * @param requestCode       The request code that is passed to callback to identify the activity
 	 */
 	public void startActivityForResult(CordovaPlugin command, Intent intent, int requestCode) {
+		this.activityResultCallback = command;
+		this.activityResultKeepRunning = this.keepRunning;
+
+		// If multitasking turned on, then disable it for activities that return results
+		if (command != null) {
+			this.keepRunning = false;
+		}
+
+		// Start activity
+		super.startActivityForResult(intent, requestCode);
 	}
 
 	/**
@@ -151,6 +173,7 @@ public class MoSync extends Activity implements CordovaInterface
 	 * @param plugin      The plugin on which onActivityResult is to be called
 	 */
 	public void setActivityResultCallback(CordovaPlugin plugin) {
+		this.activityResultCallback = plugin;
 	}
 
 	/**
@@ -681,6 +704,19 @@ public class MoSync extends Activity implements CordovaInterface
 		else
 		{
 			super.onActivityResult(requestCode, resultCode, data);
+
+			// CordovaPlugin callback = this.activityResultCallback;
+			// if(callback == null && initCallbackClass != null) {
+			// 	// The application was restarted, but had defined an initial callback
+			// 	// before being shut down.
+			// 	WebView webView = mMoSyncThread.maWidgetGet(IX_WIDGET.MAW_WEB_VIEW);
+			// 	this.activityResultCallback = webView.pluginManager.getPlugin(initCallbackClass);
+			// 	callback = this.activityResultCallback;
+			// }
+			// if(callback != null) {
+			// 	LOG.d(TAG, "We have a callback to send this result to");
+			// 	callback.onActivityResult(requestCode, resultCode, intent);
+			// }
 		}
 	}
 
