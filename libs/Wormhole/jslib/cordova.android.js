@@ -1,5 +1,5 @@
 // Platform: android
-// 2.7.0rc1-93-g67645bb
+// 2.9.0-28-gc01c173
 /*
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
@@ -19,7 +19,7 @@
  under the License.
 */
 ;(function() {
-var CORDOVA_JS_BUILD_LABEL = '2.7.0rc1-93-g67645bb';
+var CORDOVA_JS_BUILD_LABEL = '2.9.0-28-gc01c173';
 // file: lib/scripts/require.js
 
 var require,
@@ -1928,6 +1928,7 @@ var exec = require('cordova/exec'),
  */
 function DirectoryReader(path) {
     this.path = path || null;
+    this.hasReadEntries = false;
 }
 
 /**
@@ -1937,6 +1938,12 @@ function DirectoryReader(path) {
  * @param {Function} errorCallback is called with a FileError
  */
 DirectoryReader.prototype.readEntries = function(successCallback, errorCallback) {
+    // If we've already read and passed on this directory's entries, return an empty list.
+    if (this.hasReadEntries) {
+        successCallback([]);
+        return;
+    }
+    var reader = this;
     var win = typeof successCallback !== 'function' ? null : function(result) {
         var retVal = [];
         for (var i=0; i<result.length; i++) {
@@ -1953,6 +1960,7 @@ DirectoryReader.prototype.readEntries = function(successCallback, errorCallback)
             entry.fullPath = result[i].fullPath;
             retVal.push(entry);
         }
+        reader.hasReadEntries = true;
         successCallback(retVal);
     };
     var fail = typeof errorCallback !== 'function' ? null : function(code) {
