@@ -115,6 +115,8 @@ public class WebWidget extends Widget
 		// Create the Android WebView component.
 		WebView webView = new WebWidget.MoSyncWebView(activity);
 
+		MoSyncThread.getInstance().maWebViewSet(webView);
+
 		// Create the widget proxy object that MoSync uses to manage
 		// the WebView.
 		WebWidget webWidget = new WebWidget(handle, webView);

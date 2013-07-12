@@ -98,6 +98,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.apache.cordova.api.CordovaPlugin;
 import org.apache.cordova.api.CordovaInterface;
+import org.apache.cordova.CordovaWebView;
 
 /**
  * Main MoSync activity
@@ -706,18 +707,19 @@ public class MoSync extends Activity implements CordovaInterface
 		{
 			super.onActivityResult(requestCode, resultCode, data);
 
-			// CordovaPlugin callback = this.activityResultCallback;
-			// if(callback == null && initCallbackClass != null) {
-			// 	// The application was restarted, but had defined an initial callback
-			// 	// before being shut down.
-			// 	WebView webView = mMoSyncThread.maWidgetGet(IX_WIDGET.MAW_WEB_VIEW);
-			// 	this.activityResultCallback = webView.pluginManager.getPlugin(initCallbackClass);
-			// 	callback = this.activityResultCallback;
-			// }
-			// if(callback != null) {
-			// 	LOG.d(TAG, "We have a callback to send this result to");
-			// 	callback.onActivityResult(requestCode, resultCode, intent);
-			// }
+			CordovaPlugin callback = this.activityResultCallback;
+			if(callback == null && initCallbackClass != null) {
+				// The application was restarted, but had defined an initial callback
+				// before being shut down.
+				CordovaWebView webView = (CordovaWebView) mMoSyncThread.maWebViewGet();
+				if (webView != null) {
+					this.activityResultCallback = webView.pluginManager.getPlugin(initCallbackClass);
+					callback = this.activityResultCallback;
+				}
+			}
+			if(callback != null) {
+				callback.onActivityResult(requestCode, resultCode, data);
+			}
 		}
 	}
 
