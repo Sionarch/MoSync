@@ -65,7 +65,6 @@ import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.View;
 import android.view.Window;
-import android.webkit.WebView;
 
 import com.mosync.internal.android.EventQueue;
 import com.mosync.internal.android.Mediator;
