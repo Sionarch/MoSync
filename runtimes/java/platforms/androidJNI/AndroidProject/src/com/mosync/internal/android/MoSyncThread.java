@@ -113,6 +113,7 @@ import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -133,7 +134,6 @@ import com.mosync.nativeui.ui.widgets.MoSyncCameraPreview;
 import com.mosync.nativeui.ui.widgets.ScreenWidget;
 import com.mosync.nativeui.util.AsyncWait;
 import com.mosync.nativeui.util.MediaManager;
-import android.webkit.WebView;
 
 /**
  * Thread that runs the MoSync virtual machine and handles all syscalls.
@@ -198,7 +198,6 @@ public class MoSyncThread extends Thread implements MoSyncContext
 	MoSyncDB mMoSyncDB;
 	MoSyncExtensionLoader mMoSyncExtensionLoader;
 	MoSyncOrientationHelper mOrientation;
-	WebView mWebView;
 
 
 	/**
@@ -4517,7 +4516,7 @@ public class MoSyncThread extends Thread implements MoSyncContext
 	 */
 	public WebView maWebViewGet()
 	{
-		return mWebView;
+		return mMoSyncNativeUI.maWebViewGet();
 	}
 
 	/**
@@ -4526,7 +4525,7 @@ public class MoSyncThread extends Thread implements MoSyncContext
 	 */
 	public void maWebViewSet(WebView webView)
 	{
-		mWebView = webView;
+		mMoSyncNativeUI.maWebViewSet(webView);
 	}
 
 	/**

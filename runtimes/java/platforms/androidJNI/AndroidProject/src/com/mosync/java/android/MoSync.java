@@ -719,6 +719,7 @@ public class MoSync extends Activity implements CordovaInterface
 			}
 			if(callback != null) {
 				callback.onActivityResult(requestCode, resultCode, data);
+				Log.i("@@MoSync","Cordova plugin callback.onActivityResult called.");
 			}
 		}
 	}
